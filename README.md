@@ -21,3 +21,10 @@ Run migration:
 ```
 backend/scripts/run_migrations.sh
 ```
+
+Testing
+
+```
+cd backend
+./scripts/run_pytest.sh tests
+```
