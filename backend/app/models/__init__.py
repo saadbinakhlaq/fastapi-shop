@@ -1,4 +1,6 @@
 # need access to this before importing models
-from app.database import Base
+from datetime import datetime
 
-from .user import User
+from app.database import Base
+from app.models.user import User
+

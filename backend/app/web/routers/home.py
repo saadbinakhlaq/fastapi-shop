@@ -6,8 +6,6 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from openai import OpenAI
 
-client = OpenAI()
-
 templates = Jinja2Templates(directory="app/templates")
 
 router = APIRouter(
