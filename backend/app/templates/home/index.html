@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Prompt and Image Viewer{% endblock %}
+
+{% block page_content %}
+<main class="container mt-4">
+    <div class="row">
+        <!-- Left Column: Prompt Input -->
+        <div class="col-md-6">
+            <form method="post" action="/home/generate">
+                <div class="mb-3">
+                    <label for="prompt" class="form-label">Enter your prompt</label>
+                    <input type="text" class="form-control" id="prompt" name="prompt" placeholder="Describe something...">
+                </div>
+                <button type="submit" class="btn btn-primary">Generate</button>
+            </form>
+        </div>
+
+        <!-- Right Column: Image -->
+        <div class="col-md-6 text-center">
+            {% if image_url %}
+                <img src="{{ image_url }}" alt="Generated Image" class="img-fluid mt-3 rounded shadow">
+            {% else %}
+                <p class="text-muted mt-5">Image will appear here after submitting a prompt.</p>
+            {% endif %}
+        </div>
+    </div>
+</main>
+{% endblock %}

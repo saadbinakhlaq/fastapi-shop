@@ -32,11 +32,13 @@ services:
     build:
       context: backend
       dockerfile: Dockerfile
-    command: python app/main.py
     tty: true
     volumes:
-      - ./backend:/backend/:cached
-      - ./.docker/.ipython:/root/.ipython:cached
+      - ./backend:/backend
+      - /backend/.venv # this is important for uv to run https://github.com/astral-sh/uv/issues/8342#issuecomment-2529780192
+    env_file:
+      - backend/.env
+    command: fastapi dev app/main.py --host 0.0.0.0 --port 8000
     environment:
       PYTHONPATH: .
       DATABASE_URL: "postgresql+asyncpg://dev-user:password@postgres:5432/dev_db"
