@@ -1,7 +1,8 @@
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import Mapped, mapped_column
 
-from app.models import Base, TimestampMixin
+from app.models import Base
+from app.models.mixins.timestamp import TimestampMixin
 
 
 class Product(Base, TimestampMixin):
