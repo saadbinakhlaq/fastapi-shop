@@ -9,6 +9,7 @@ dependencies = [
     "asyncpg>=0.30.0",
     "authlib>=1.6.0",
     "bcrypt>=4.3.0",
+    "elasticsearch>=8.0.0",
     "fastapi[standard]>=0.115.12",
     "httpx>=0.28.1",
     "ipython>=8.36.0",

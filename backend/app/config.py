@@ -8,6 +8,7 @@ class Settings(BaseSettings):
     project_name: str = "My FastAPI project"
     oauth_token_secret: str = "my_dev_secret"
     log_level: str = "DEBUG"
+    elasticsearch_url: str = "http://localhost:9200"
 
 
 settings = Settings()  # type: ignore
